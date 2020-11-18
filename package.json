@@ -1,0 +1,36 @@
+{
+  "name": "Weather_app",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "dependencies": {
+    "lodash": "^4.17.20"
+  },
+  "devDependencies": {
+    "css-loader": "^5.0.1",
+    "csv-loader": "^3.0.3",
+    "json5": "^2.1.3",
+    "style-loader": "^2.0.0",
+    "toml": "^3.0.0",
+    "webpack": "^5.5.0",
+    "webpack-cli": "^4.2.0",
+    "xml-loader": "^1.2.1",
+    "yamljs": "^0.3.0"
+  },
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "watch": "webpack --progress --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abouhid/Weather_app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abouhid/Weather_app/issues"
+  },
+  "homepage": "https://github.com/abouhid/Weather_app#readme"
+}
