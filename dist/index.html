@@ -15,29 +15,24 @@
       integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <title>Weather App</title>
   </head>
   <body>
-    <div class="modal">
+    <div class="modasl">
       <div class="modal-content"> 
         <div class="button btn btn-secondary exit-modal">Exit</div>       
       </div>
     </div>
-    <div class='col-6 mx-auto row d-flex justify-content-around'>
+    <nav class='col-6 mx-auto row d-flex justify-content-around'>
             <!-- <button class='btn btn-secondary' id='metrics'>Farenheit</button> -->
             <form class="form-inline mx-auto" id='form'>
                 
                 <input class="form-control mr-sm-2" type="text" placeholder="City" aria-label="Search" id='city-input'>
                 <button class="btn btn-outline-success my-2 my-sm-0" id='submit' type="submit">Search City</button>
-            </form>
-        </div>  
-          
-        
+            </form>           
     </nav>
 
-    <div class='text-center mx-auto row d-flex pt-5' id='giphy'>
+    <main class='text-center mx-auto row d-flex pt-5' id='giphy'>
         <div class='boxx col-10 col-md-4 mx-auto pb-3'>
             <h2><span id='city'>City</span>, <span id='country'>Country</span></h2>
             <p><span id='day'>Day</span>, <span id='month'>Month</span>
@@ -49,7 +44,7 @@
         </div>     
 
 
-    </div>
+      </main>
     
     <script src="main.js"></script>
   </body>

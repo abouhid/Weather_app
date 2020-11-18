@@ -26,7 +26,8 @@ const month = date.getMonth();
 submit.addEventListener('click' ,(e) => {
     e.preventDefault();
 
-    findCity(cityInput.value).then(response => {
+    findCity(cityInput.value)
+    .then(response => {
         city.textContent = response.name
         temp.textContent = convertCelsius(response.main.temp);
         country.textContent = response.sys.country;
@@ -35,13 +36,12 @@ submit.addEventListener('click' ,(e) => {
         humidity.textContent = convertCelsius(response.main.humidity);
         temp_max.textContent = convertCelsius(response.main.temp_max);
         temp_min.textContent = convertCelsius(response.main.temp_min);
-
         dayCont.textContent = day;
         monthCont.textContent = convertMonth(month);
         description.textContent =response.weather[0].description
-        console.log(response)
-
+        console.log('response')
     })
+   
 })
 
 
