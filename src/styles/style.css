@@ -1,68 +1,68 @@
 body {
-    /* max-width: 1200px; */
-    margin: 0 auto;
-    /* background-color: #353531;
-    background-image: linear-gradient(to top, #232525 75%, (30,215,96) 25%); */
-  }
+  /* max-width: 1200px; */
+  margin: 0 auto;
 
-  
+  /* background-color: #353531;
+    background-image: linear-gradient(to top, #232525 75%, (30,215,96) 25%); */
+}
+
 nav {
   display: flex;
-    flex-direction: row;
-    background-color: #232525;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-    padding: 0 3%;
+  flex-direction: row;
+  background-color: #232525;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  padding: 0 3%;
 }
 
 #form {
   align-self: center;
 }
 
-.logoCont {
-
+.logoCont,
+.convert span,
+.quote {
+  cursor: pointer;
 }
 
 .logo {
   width: 100px;
-
 }
-.logoCont span{
+
+.logoCont span {
   font-size: 30px;
   font-weight: bold;
-  color: rgba(30,215,96,0.8);
-  border-color: rgba(30,215,96,0.7);
+  color: rgba(30, 215, 96, 0.8);
+  border-color: rgba(30, 215, 96, 0.7);
 }
 
-#city-input{
+#city-input {
   margin-right: 1em;
   min-width: 100px;
   width: 100vh;
 }
 
 #submit {
-  color: rgba(30,215,96,0.8);
-  border-color: rgba(30,215,96,0.7);
+  color: rgba(30, 215, 96, 0.8);
+  border-color: rgba(30, 215, 96, 0.7);
 }
+
 #submit:hover {
-  background-color: rgba(30,215,96,0.7);
+  background-color: rgba(30, 215, 96, 0.7);
   color: white;
 }
 
-
-
 main {
-background-image: url('https://openw3.com/wp-content/uploads/2013/02/silverback-gorilla-leaves-africa.jpg');
-background-position: center; /* Center the image */
-background-repeat: repeat; /* Do not repeat the image */
-background-size: cover;
-min-height: -webkit-fill-available;
-justify-content: space-between;
-width: 100%;
-padding: 5% 3%;
-
+  background-image: url('https://openw3.com/wp-content/uploads/2013/02/silverback-gorilla-leaves-africa.jpg');
+  background-position: center; /* Center the image */
+  background-repeat: repeat; /* Do not repeat the image */
+  background-size: cover;
+  min-height: -webkit-fill-available;
+  justify-content: space-between;
+  width: 100%;
+  padding: 5% 3%;
 }
 
 .mainCont {
@@ -73,12 +73,11 @@ padding: 5% 3%;
 .quote-box {
   background-color: #232525;
   width: 35%;
-  border-right:1px solid rgba(0, 0, 0, 0.4);
-    font-size: 30px;
-    font-weight: bold;
-    color: rgba(30,215,96,0.8);
-    padding: 2%;
-
+  border-right: 1px solid rgba(0, 0, 0, 0.4);
+  font-size: 30px;
+  font-weight: bold;
+  color: rgba(30, 215, 96, 0.8);
+  padding: 2%;
 }
 
 .quote-box div {
@@ -94,7 +93,7 @@ padding: 5% 3%;
 }
 
 .welcome-box {
-  color: rgba(30,215,96,0.8);
+  color: rgba(30, 215, 96, 0.8);
   text-shadow: 1px 1px #232525;
   text-decoration-style: dashed;
   text-align: center;
@@ -102,29 +101,26 @@ padding: 5% 3%;
   font-style: italic;
   align-self: center;
   background-color: white;
-    border-radius: 5px;
-    padding: 5%;
-    opacity: 0.85;
-    height: fit-content;
-    margin: 0 auto;
+  border-radius: 5px;
+  padding: 5%;
+  opacity: 0.85;
+  height: fit-content;
+  margin: 0 auto;
 }
 
 .welcome-box p {
   font-size: 26px;
   margin-top: 1em;
-
 }
 
-.song-box,.weather-box {
-  display: none;
-}
-.weather-box, .song-box {
+.weather-box,
+.song-box {
   background-color: white;
-    border-radius: 5px;
-    padding: 3%;
-    opacity: 0.85;
-    height: fit-content;
-   
+  border-radius: 5px;
+  padding: 3%;
+  opacity: 0.85;
+  height: fit-content;
+  display: none;
 }
 
 .cityCont {
@@ -136,6 +132,7 @@ padding: 5% 3%;
   font-size: 30px;
   text-align: end;
 }
+
 .weather-grid {
   display: grid;
   grid-gap: 1.3em;
@@ -144,8 +141,8 @@ padding: 5% 3%;
 
 .songCont {
   display: flex;
-    flex-direction: column;
-    position: relative;
+  flex-direction: column;
+  position: relative;
 }
 
 .songCont img {
@@ -159,17 +156,19 @@ padding: 5% 3%;
   display: grid;
   grid-template-columns: 0.7fr 0.4fr;
 }
+
 .song {
+  cursor: pointer;
   display: grid;
   margin-top: 1em;
   grid-template-columns: 0.1fr 0.7fr 0.5fr;
 }
+
 .song li {
   margin-left: 0.5em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-
 }
 
 
@@ -188,7 +187,7 @@ padding: 5% 3%;
   opacity: 0.9;
 }
 
-.switch input { 
+.switch input {
   opacity: 0;
   width: 0;
   height: 0;
@@ -202,11 +201,11 @@ padding: 5% 3%;
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
-.slider:before {
+.slider::before {
   position: absolute;
   content: "";
   height: 16px;
@@ -214,20 +213,19 @@ padding: 5% 3%;
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: rgba(30,215,96,0.8)
-  ;
+  background-color: rgba(30, 215, 96, 0.8);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #2196f3;
 }
 
-input:checked + .slider:before {
+input:checked + .slider::before {
   -webkit-transform: translateX(18px);
   -ms-transform: translateX(18px);
   transform: translateX(18px);
@@ -237,7 +235,7 @@ input:checked + .slider:before {
   border-radius: 34px;
 }
 
-.slider.round:before {
+.slider.round::before {
   border-radius: 50%;
 }
 
@@ -245,53 +243,50 @@ input:checked + .slider:before {
 
 /* modal */
 .modalBox {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-  }
-  
-  .modal-content {
-    display: flex;
-    justify-content: space-between;
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: fit-content; /* Could be more or less, depending on screen size */
-  }
-  
-  .exit-modal {
-    align-self: flex-end;
-    margin-top: 9%;
-  }
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
 
-  .loadCont {
-    background-color: red;
-    width: fit-content;
-    height: fit-content;
-  }
+.modal-content {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: fit-content; /* Could be more or less, depending on screen size */
+}
 
+.exit-modal {
+  align-self: flex-end;
+  margin-top: 9%;
+}
+
+.loadCont {
+  background-color: red;
+  width: fit-content;
+  height: fit-content;
+}
 
 .loader {
-  width : 80px;
+  width: 80px;
   height: 80px;
   border: 16px solid white;
-  border-top:16px solid rgba(30,215,96,0.7);
+  border-top: 16px solid rgba(30, 215, 96, 0.7);
   border-radius: 50%;
   display: none;
   position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 50%;
-    top: 50%;
-
-  
+  z-index: 1; /* Sit on top */
+  left: 50%;
+  top: 50%;
 }
 
 .spin {
@@ -300,6 +295,6 @@ input:checked + .slider:before {
 }
 
 @keyframes spinner {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
