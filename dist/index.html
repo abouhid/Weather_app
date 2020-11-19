@@ -18,67 +18,57 @@
     <title>Weather App</title>
   </head>
   <body>
-    <div class="modasl">
-      <div class="modal-content"> 
-        <div class="button btn btn-secondary exit-modal">Exit</div>       
+    <div class="modalBox">
+      <div class="modal-content">
+        <div class="button btn btn-secondary exit-modal">Exit</div>
       </div>
     </div>
-    <nav class='col-6 mx-auto row d-flex justify-content-around'>
-            <!-- <button class='btn btn-secondary' id='metrics'>Farenheit</button> -->
-            <form class="form-inline mx-auto" id='form'>
-                
-                <input class="form-control mr-sm-2" type="text" placeholder="City" aria-label="Search" id='city-input'>
-                <button class="btn btn-outline-success my-2 my-sm-0" id='submit' type="submit">Search City</button>
-            </form>           
+    <nav>
+      <div class="logoCont d-flex align-items-center">
+        <img src="../src/images/logo1.png" class="logo" />
+        <span>Sweather</span>
+      </div>
+      <!-- <button class='btn btn-secondary' id='metrics'>Farenheit</button> -->
+      <form class="form-inline" id="form">
+        <input
+          class="form-control"
+          type="text"
+          placeholder="City"
+          aria-label="Search"
+          id="city-input"
+        />
+        <button class="btn my-2" id="submit" type="submit">Search City</button>
+      </form>
+      <div class="convert d-flex align-items-center">
+        <span>ºC</span>
+      <label class="switch mx-2">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+      <span>ºF</span>
+
+    </div>
     </nav>
 
-    <main class='text-center mx-auto row d-flex pt-5' id='giphy'>
-        <div class='boxx col-10 col-md-4 mx-auto pb-3'>
-          <div class="mb-3" id="song">Song Suggestion</div>
+    <main class="text-center mx-auto row d-flex pt-5" id="giphy">
+      <div class="boxx col-10 col-md-4 mx-auto pb-3">
+        <div class="mb-3" id="song">Song Suggestion</div>
 
-            <h2><span id='city'>City</span>, <span id='country'>Country</span></h2>
-            <p><span id='day'>Day</span>, <span id='month'>Month</span>
-            <h2><span id='temperature'>0</span><span id='grades'>°C</span></h2> 
-            <p>Feel like: <span id='feels_like'>00</span></p>
-            <span>Temp-max: <span id='temp_max'>00</span></span><span> | Temp-min: <span id='temp_min'>00</span></span><br>
-            <span>Pressure: <span id='pressure'>00</span></span><span> | Humidity: <span id='humidity'>00</span></span><br>
-            <strong>Description: <br><span id='description'></span> </strong><i id='icon'></i>
-        </div>  
-       
-    <div class="container d-none">        
-      <form class="d-flex" action="">
-          <input type="hidden" id='hidden_token'>
-          <div class="col-sm-6 form-group row mt-4 px-0">
-              <label for="Genre" class="form-label col-sm-2">Genre:</label>
-              <select name="" id="select_genre" class="form-control form-control-sm col-sm-10">
-                  <option>Select...</option>                    
-              </select>
-          </div>
-          <div class="col-sm-6 form-group row px-0">
-              <label for="Genre" class="form-label col-sm-2">Playlists:</label>
-              <select name="" id="select_playlist" class="form-control form-control-sm col-sm-10">
-                  <option>Select...</option>                    
-              </select>
-          </div>                  
-          <div class="col-sm-6 row form-group px-0">
-              <button type="submit" id="btn_submit" class="btn btn-success col-sm-12">Search</button>
-          </div>          
-      </form>        
-      <div class="row">
-          <div class="col-sm-6 px-0">
-              <div class="list-group song-list">
-                  
-              </div>                                             
-          </div>
-          <div class="offset-md-1 col-sm-4" id="song-detail">                
-          </div>
-      </div>   
-  </div>                              
+        <h2><span id="city">City</span>, <span id="country">Country</span></h2>
+        <p><span id="day">Day</span>, <span id="month">Month</span></p>
+        <h2><span id="temperature">0</span><span id="grades">°C</span></h2>
+        <p>Feel like: <span id="feels_like">00</span></p>
+        <span>Temp-max: <span id="temp_max">00</span></span
+        ><span> | Temp-min: <span id="temp_min">00</span></span
+        ><br />
+        <span>Pressure: <span id="pressure">00</span></span
+        ><span> | Humidity: <span id="humidity">00</span></span
+        ><br />
+        <strong>Description: <br /><span id="description"></span> </strong
+        ><i id="icon"></i>
+      </div>
+    </main>
 
-
-      </main>
-    
     <script src="main.js"></script>
-    <!-- <script src="../src/modules/spotify.js"></script> -->
   </body>
 </html>

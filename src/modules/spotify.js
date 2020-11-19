@@ -36,14 +36,8 @@ const loadGenres = async () => {
      // get the list of tracks
      const tracks = await getTracks(token, tracksEndPoint);
 
-    //   tracks.forEach(el => console.log(el.track.name))
+      tracks.forEach(el => console.log(el.track.name))
      return tracks
 }
 
-// will need to call a method to load the genres on page load
-  const test = loadGenres().then(data =>{
-     data.forEach(el => console.log(el.track.name))
-     return data
-  });
-
-//   export {loadGenres}
+export {loadGenres}

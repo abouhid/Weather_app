@@ -1,8 +1,9 @@
 
 import './styles/reset.css';
 import './styles/style.css';
+import {  loadGenres } from './modules/spotify.js'
 
-import { findCity, loadGenres } from './modules/findCity.js'
+import { findCity } from './modules/findCity.js'
 import { convertCelsius, convertFarenheit, convertMonth } from './modules/convert.js'
 
 const form = document.getElementById('form');
@@ -41,12 +42,11 @@ const song = document.getElementById('song')
         dayCont.textContent = day;
         monthCont.textContent = convertMonth(month);
         description.textContent =response.weather[0].description
-        console.log('response')
     })
    
     loadGenres()
     .then(data => {
-        song.textContent =data[0].track.name
+        song.textContent =data[1].track.name
     });
 
     
