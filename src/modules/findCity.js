@@ -12,7 +12,8 @@ const findCity = async (city) => {
     }
     throw new Error();
   } catch (error) {
-    openModal('City not found!');
+    // openModal('City not found!');
+    return openModal('City not found!');
   }
 };
 
