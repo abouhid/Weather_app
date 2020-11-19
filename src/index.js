@@ -18,6 +18,7 @@ import {
     convertFtoC,
     convertCtoF
 } from './modules/convert.js'
+import { openModal } from './modules/modal';
 
 const form = document.getElementById('form');
 const cityInput = document.getElementById('city-input');
@@ -79,23 +80,6 @@ checkbox.addEventListener('change', function () {
 });
 
 
-function refresh() {
-    const spinner = document.querySelector('.loader');
-    spinner.classList.add('spin');
-    performFakeCall();
-
-    function performFakeCall() {
-        return new Promise(function (resolve, reject) {
-            setTimeout(function () {
-                resolve()
-            }, 3000);
-        })
-    }
-
-    performFakeCall().then(function (result) {
-        spinner.classList.remove('spin');
-    });
-}
 
 
 submit.addEventListener('click', (e) => {
@@ -103,8 +87,11 @@ submit.addEventListener('click', (e) => {
     if (checkbox.checked) {checkbox.click()}
     spinner.classList.add('spin');  
     findCity(cityInput.value)
+    .catch(err => {
+        console.log(err); 
+    })
         .then(response => {
-            refresh();
+            if(response){
             city.textContent = response.name
             country.textContent = response.sys.country;
             pressure.textContent = response.main.pressure;
@@ -116,7 +103,7 @@ submit.addEventListener('click', (e) => {
             dayCont.textContent = day;
             monthCont.textContent = convertMonth(month);
             description.textContent = response.weather[0].description
-            spinner.classList.remove('spin')
+        }
         })
 
     loadGenres()
@@ -125,5 +112,7 @@ submit.addEventListener('click', (e) => {
             data.forEach(el => {
                 createSongElements(el)
             })
+            spinner.classList.remove('spin')
+
         });
 })
