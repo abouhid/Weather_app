@@ -33,7 +33,6 @@ const loadSongs = async (temp) => {
         return data.items;
     }
 
-
     const getGenres = async (token) => {
 
         const result = await fetch(`https://api.spotify.com/v1/browse/categories?locale=sv_US`, {
@@ -61,25 +60,27 @@ const loadSongs = async (temp) => {
         const data = await result.json();
         return data.playlists.items;
     }
-    console.log('b')
-    // const tracksEndPoint =''
-    // if (temp.textContent > 2) {
-    //     console.log(temp.textContent)
-    //     const tracksEndPoint = 'https://api.spotify.com/v1/playlists/37i9dQZF1DWTyiBJ6yEqeu/tracks';
-    // }else {
-        const tracksEndPoint = 'https://api.spotify.com/v1/playlists/37i9dQZF1DXdxcBWuJkbcy/tracks';
-    
-    console.log('a')
-
+    let tracksEndPoint =''
     const token = await getToken();
+
+
+    if (temp.textContent > 30) {
+        tracksEndPoint = 'https://api.spotify.com/v1/playlists/37i9dQZF1DX0Uv9tZ47pWo/tracks';
+    } else if (temp.textContent > 20){
+        tracksEndPoint = 'https://api.spotify.com/v1/playlists/37i9dQZF1DX9XIFQuFvzM4/tracks';
+    }else if (temp.textContent > 0 && temp.textContent<=20 ){
+        tracksEndPoint = 'https://api.spotify.com/v1/playlists/37i9dQZF1DX2pSTOxoPbx9/tracks';
+    } else {
+        tracksEndPoint = 'https://api.spotify.com/v1/playlists/37i9dQZF1DX2yvmlOdMYzV/tracks';
+    }
+
 
     const genreID = 'decades';
 
     const tracks = await getTracks(token, tracksEndPoint);
     const genres = await getPlaylistByGenre(token, genreID);
 
-    console.log(genres)
-    //   tracks.forEach(el => console.log(el.track.album.images[2].url))
+    // console.log(genres)
     return tracks
 }
 

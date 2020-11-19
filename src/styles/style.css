@@ -8,12 +8,13 @@ body {
   
 nav {
   display: flex;
-  flex-direction: row;
-  background-color: #232525;
-  width: 100%;
-  align-items: center;
-  justify-content: space-evenly;
-  border-bottom:1px solid rgba(0, 0, 0, 0.4);
+    flex-direction: row;
+    background-color: #232525;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    padding: 0 3%;
 }
 
 #form {
@@ -38,6 +39,7 @@ nav {
 #city-input{
   margin-right: 1em;
   min-width: 100px;
+  width: 100vh;
 }
 
 #submit {
@@ -119,10 +121,25 @@ padding: 5% 3%;
 .weather-box, .song-box {
   background-color: white;
     border-radius: 5px;
-    padding: 5%;
+    padding: 3%;
     opacity: 0.85;
     height: fit-content;
-    
+   
+}
+
+.cityCont {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.tempCont {
+  font-size: 30px;
+  text-align: end;
+}
+.weather-grid {
+  display: grid;
+  grid-gap: 1.3em;
+  grid-template-columns: 1fr 1fr;
 }
 
 .songCont {
@@ -136,15 +153,16 @@ padding: 5% 3%;
 }
 
 .song-box h2 {
-  font-size: 24px;
+  font-size: 19px;
+  font-weight: bold;
   margin-bottom: 1em;
   display: grid;
-  grid-template-columns: 0.7fr 0.52fr;
+  grid-template-columns: 0.7fr 0.4fr;
 }
 .song {
   display: grid;
   margin-top: 1em;
-  grid-template-columns: 0.1fr 0.5fr 0.5fr;
+  grid-template-columns: 0.1fr 0.7fr 0.5fr;
 }
 .song li {
   margin-left: 0.5em;
