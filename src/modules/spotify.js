@@ -41,6 +41,13 @@ const loadGenres = async () => {
      return tracks
 }
 
+const resetList = () => {
+    const songCont = document.querySelector('.songCont')
+    while(songCont.firstChild){ songCont.removeChild(songCont.firstChild)}
+
+}
+
+
 const createSongElements = (el) => {
     const song = document.createElement('ul')
     const songCont = document.querySelector('.songCont')
@@ -58,4 +65,4 @@ const createSongElements = (el) => {
     songCont.appendChild(song)
 }
 
-export {loadGenres,createSongElements}
+export {loadGenres,createSongElements,resetList}

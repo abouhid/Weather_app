@@ -90,6 +90,7 @@ justify-content: space-between;
 
 }
 
+
 /* Slider */
 
 .switch {
@@ -188,3 +189,35 @@ input:checked + .slider:before {
     align-self: flex-end;
     margin-top: 9%;
   }
+
+  .loadCont {
+    background-color: red;
+    width: fit-content;
+    height: fit-content;
+  }
+
+
+.loader {
+  width : 80px;
+  height: 80px;
+  border: 16px solid white;
+  border-top:16px solid rgba(30,215,96,0.7);
+  border-radius: 50%;
+  display: none;
+  position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 50%;
+    top: 50%;
+
+  
+}
+
+.spin {
+  animation: spinner 1.5s linear infinite;
+  display: block;
+}
+
+@keyframes spinner {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

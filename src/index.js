@@ -4,7 +4,8 @@ import logo from './images/logo1.png';
 
 import {
     loadGenres,
-    createSongElements
+    createSongElements,
+    resetList
 } from './modules/spotify.js'
 
 import {
@@ -13,8 +14,8 @@ import {
 import {
     convertCelsius,
     convertFarenheit,
-    convertMonth
-    ,convertFtoC,
+    convertMonth,
+    convertFtoC,
     convertCtoF
 } from './modules/convert.js'
 
@@ -38,6 +39,7 @@ const day = date.getDate();
 const month = date.getMonth();
 const slider = document.querySelector('.slider');
 const checkbox = document.querySelector('input[type="checkbox"]');
+const spinner = document.querySelector('.loader');
 
 // const logoImg = new Image();
 // logoImg.src = logo;
@@ -52,34 +54,57 @@ const checkbox = document.querySelector('input[type="checkbox"]');
 
 // addIcon();
 
+checkbox.addEventListener('change', function () {
 
-    checkbox.addEventListener('change', function () {
+    console.log(checkbox.checked)
+    if (checkbox.checked) {
+        grades.forEach(el => {
+            el.textContent = 'ºF'
+        })
 
-        console.log(checkbox.checked)
-        if (checkbox.checked) {
-            grades.forEach(el=>{el.textContent = 'ºF'})
-    
-            temp.textContent = convertCtoF(temp.textContent);
-            feels_like.textContent = convertCtoF(feels_like.textContent);
-            temp_max.textContent = convertCtoF(temp_max.textContent);
-            temp_min.textContent = convertCtoF(temp_min.textContent);
-        } else {
-            grades.forEach(el=>{el.textContent = 'ºC'})
+        temp.textContent = convertCtoF(temp.textContent);
+        feels_like.textContent = convertCtoF(feels_like.textContent);
+        temp_max.textContent = convertCtoF(temp_max.textContent);
+        temp_min.textContent = convertCtoF(temp_min.textContent);
+    } else {
+        grades.forEach(el => {
+            el.textContent = 'ºC'
+        })
 
-            temp.textContent = convertFtoC(temp.textContent);
-            feels_like.textContent = convertFtoC(feels_like.textContent);
-            temp_max.textContent = convertFtoC(temp_max.textContent);
-            temp_min.textContent = convertFtoC(temp_min.textContent);
-        }
+        temp.textContent = convertFtoC(temp.textContent);
+        feels_like.textContent = convertFtoC(feels_like.textContent);
+        temp_max.textContent = convertFtoC(temp_max.textContent);
+        temp_min.textContent = convertFtoC(temp_min.textContent);
+    }
+});
+
+
+function refresh() {
+    const spinner = document.querySelector('.loader');
+    spinner.classList.add('spin');
+    performFakeCall();
+
+    function performFakeCall() {
+        return new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                resolve()
+            }, 3000);
+        })
+    }
+
+    performFakeCall().then(function (result) {
+        spinner.classList.remove('spin');
     });
+}
 
 
 submit.addEventListener('click', (e) => {
     e.preventDefault();
-    if (checkbox.checked) { checkbox.click()}
-
+    if (checkbox.checked) {checkbox.click()}
+    spinner.classList.add('spin');  
     findCity(cityInput.value)
         .then(response => {
+            refresh();
             city.textContent = response.name
             country.textContent = response.sys.country;
             pressure.textContent = response.main.pressure;
@@ -91,10 +116,12 @@ submit.addEventListener('click', (e) => {
             dayCont.textContent = day;
             monthCont.textContent = convertMonth(month);
             description.textContent = response.weather[0].description
+            spinner.classList.remove('spin')
         })
 
     loadGenres()
         .then(data => {
+            resetList();
             data.forEach(el => {
                 createSongElements(el)
             })
