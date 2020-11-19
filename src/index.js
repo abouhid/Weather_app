@@ -2,6 +2,8 @@ import './styles/reset.css';
 import './styles/style.css';
 import logo from './images/logo1.png';
 
+import changeQuote from './modules/quotes';
+
 import {
     loadSongs,
     createSongElements,
@@ -43,7 +45,7 @@ const spinner = document.querySelector('.loader');
 const weatherBox =  document.querySelector('.weather-box');
 const songBox =  document.querySelector('.song-box');
 const welcomeBox =  document.querySelector('.welcome-box');
-
+const quote =  document.querySelector('.quote');
 
 
 // const logoImg = new Image();
@@ -58,6 +60,8 @@ const welcomeBox =  document.querySelector('.welcome-box');
 //   };
 
 // addIcon();
+quote.textContent = changeQuote()
+
 
 checkbox.addEventListener('change', function () {
 
@@ -117,7 +121,7 @@ submit.addEventListener('click', (e) => {
             })
 
             spinner.classList.remove('spin')
-            if(temp.textContent !=='X'){ 
+            if(city.textContent !=='X'){ 
             welcomeBox.style.display = "none";
             weatherBox.style.display = "block";
             songBox.style.display = "block";

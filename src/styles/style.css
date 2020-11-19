@@ -72,7 +72,23 @@ padding: 5% 3%;
   background-color: #232525;
   width: 35%;
   border-right:1px solid rgba(0, 0, 0, 0.4);
+    font-size: 30px;
+    font-weight: bold;
+    color: rgba(30,215,96,0.8);
+    padding: 2%;
 
+}
+
+.quote-box div {
+  font-family: monospace;
+  text-shadow: 2px 2px black;
+  text-decoration-style: dashed;
+  text-align: center;
+  font-style: italic;
+  line-height: 2.5em;
+  font-size: 19px;
+  padding: 20vh 0;
+  opacity: 0.9;
 }
 
 .welcome-box {
@@ -120,6 +136,8 @@ padding: 5% 3%;
 }
 
 .song-box h2 {
+  font-size: 24px;
+  margin-bottom: 1em;
   display: grid;
   grid-template-columns: 0.7fr 0.52fr;
 }
