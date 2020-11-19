@@ -4,7 +4,7 @@
 
 # Sweather
 
-> A Javascript app that allows the user to look for the weather conditions anywhere in the world via OpenWeather's API and, depending on the weather, the Spotify's API suggest a better playlist for your mood.
+> A Javascript app that allows the user to look for the weather conditions anywhere in the world via OpenWeather's API and, depending on the weather, Spotify's API suggests a better playlist for your mood.
 
 ![screenshot](./screenshot1.png)
 
