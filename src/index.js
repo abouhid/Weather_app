@@ -3,7 +3,7 @@ import './styles/style.css';
 import logo from './images/logo1.png';
 
 import {
-    loadGenres,
+    loadSongs,
     createSongElements,
     resetList
 } from './modules/spotify.js'
@@ -38,9 +38,13 @@ const grades = document.querySelectorAll('.grades')
 const date = new Date()
 const day = date.getDate();
 const month = date.getMonth();
-const slider = document.querySelector('.slider');
 const checkbox = document.querySelector('input[type="checkbox"]');
 const spinner = document.querySelector('.loader');
+const weatherBox =  document.querySelector('.weather-box');
+const songBox =  document.querySelector('.song-box');
+const welcomeBox =  document.querySelector('.welcome-box');
+
+
 
 // const logoImg = new Image();
 // logoImg.src = logo;
@@ -57,10 +61,9 @@ const spinner = document.querySelector('.loader');
 
 checkbox.addEventListener('change', function () {
 
-    console.log(checkbox.checked)
     if (checkbox.checked) {
         grades.forEach(el => {
-            el.textContent = 'ºF'
+            el.textContent = ' ºF'
         })
 
         temp.textContent = convertCtoF(temp.textContent);
@@ -69,7 +72,7 @@ checkbox.addEventListener('change', function () {
         temp_min.textContent = convertCtoF(temp_min.textContent);
     } else {
         grades.forEach(el => {
-            el.textContent = 'ºC'
+            el.textContent = ' ºC'
         })
 
         temp.textContent = convertFtoC(temp.textContent);
@@ -106,13 +109,28 @@ submit.addEventListener('click', (e) => {
         }
         })
 
-    loadGenres()
+    loadSongs(temp)
         .then(data => {
             resetList();
             data.forEach(el => {
                 createSongElements(el)
             })
-            spinner.classList.remove('spin')
 
+            spinner.classList.remove('spin')
+            if(temp.textContent !=='X'){ 
+            welcomeBox.style.display = "none";
+            weatherBox.style.display = "block";
+            songBox.style.display = "block";
+        }
         });
 })
+
+// clear sky
+// few clouds
+// scattered clouds
+// broken clouds
+// shower rain
+// rain
+// thunderstorm
+// snow
+// mist

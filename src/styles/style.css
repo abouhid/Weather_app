@@ -13,6 +13,7 @@ nav {
   width: 100%;
   align-items: center;
   justify-content: space-evenly;
+  border-bottom:1px solid rgba(0, 0, 0, 0.4);
 }
 
 #form {
@@ -51,40 +52,85 @@ nav {
 
 
 main {
-  background-image: url('https://openw3.com/wp-content/uploads/2013/02/silverback-gorilla-leaves-africa.jpg');
-  background-position: center; /* Center the image */
+background-image: url('https://openw3.com/wp-content/uploads/2013/02/silverback-gorilla-leaves-africa.jpg');
+background-position: center; /* Center the image */
 background-repeat: repeat; /* Do not repeat the image */
 background-size: cover;
 min-height: -webkit-fill-available;
 justify-content: space-between;
+width: 100%;
+padding: 5% 3%;
+
 }
 
+.mainCont {
+  display: flex;
+  min-height: -webkit-fill-available;
+}
+
+.quote-box {
+  background-color: #232525;
+  width: 35%;
+  border-right:1px solid rgba(0, 0, 0, 0.4);
+
+}
+
+.welcome-box {
+  color: rgba(30,215,96,0.8);
+  text-shadow: 1px 1px #232525;
+  text-decoration-style: dashed;
+  text-align: center;
+  font-size: 36px;
+  font-style: italic;
+  align-self: center;
+  background-color: white;
+    border-radius: 5px;
+    padding: 5%;
+    opacity: 0.85;
+    height: fit-content;
+    margin: 0 auto;
+}
+
+.welcome-box p {
+  font-size: 26px;
+  margin-top: 1em;
+
+}
+
+.song-box,.weather-box {
+  display: none;
+}
 .weather-box, .song-box {
   background-color: white;
-  border-radius: 5px;
-  padding: 5%;
-  opacity: 0.9;
+    border-radius: 5px;
+    padding: 5%;
+    opacity: 0.85;
+    height: fit-content;
+    
 }
 
 .songCont {
   display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .songCont img {
   width: 40px;
 }
 
-.song-box {
-
+.song-box h2 {
+  display: grid;
+  grid-template-columns: 0.7fr 0.52fr;
 }
-
 .song {
-  display: flex;
+  display: grid;
   margin-top: 1em;
+  grid-template-columns: 0.1fr 0.5fr 0.5fr;
 }
 .song li {
   margin-left: 0.5em;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 

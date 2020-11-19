@@ -52,27 +52,42 @@
 
     </div>
     </nav>
+    <div class="mainCont">
+  <div class="quote-box">
 
-    <main class="text-center row d-flex p-5" id="giphy">
+          <h2>Sweather Weather:</h2>
+
+      </div>
+    <main class="d-flex " id="giphy">
+    
+      <div class="welcome-box">
+        <h2>Welcome to Sweather!</h2>
+        <p>Want a jam for a sunny afternoon? Or a track for that sad rainy day? We got your back.  </p>
+
+
+      </div>
+
       <div class="weather-box">
         <h2><span id="city">City</span>, <span id="country">Country</span></h2>
         <p><span id="day">Day</span>, <span id="month">Month</span></p>
-        <h2><span id="temperature">0</span><span class="grades">°C</span></h2>
-        <p>Feel like: <span id="feels_like">00</span><span class="grades">°C</span></p>
-        <span>Temp-max: <span id="temp_max">00</span><span class="grades">°C</span></span>
-        <span> | Temp-min: <span id="temp_min">00</span><span class="grades">°C</span></span><br />
-        <span>Pressure: <span id="pressure">00</span></span>
-        <span> | Humidity: <span id="humidity">00</span></span>
+        <h2><span id="temperature">X</span><span class="grades">°C</span></h2>
+        <p>Feel like: <span id="feels_like">0</span><span class="grades"> °C</span></p>
+        <span>Temp-max: <span id="temp_max">0</span><span class="grades"> °C</span></span>
+        <span> | Temp-min: <span id="temp_min">0</span><span class="grades"> °C</span></span><br />
+        <span>Pressure: <span id="pressure">0</span> hPa</span>
+        <span> | Humidity: <span id="humidity">0</span> %</span>
         <br />
         <strong>Description: <br /><span id="description"></span> </strong>
         <i id="icon"></i>
       </div>
       <div class="song-box">
-        <ul class='songCont'> Songs suggested for you to enjoy this weather:</ul> 
+        <h2>Suggested songs: <span>Artists</span></h2>
+        <ul class='songCont'></ul> 
 
 
       </div>
     </main>
+  </div>
 
     <script src="main.js"></script>
   </body>
