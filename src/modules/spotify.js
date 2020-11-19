@@ -1,6 +1,7 @@
 const clientId = 'cff280b633eb4f439ae1a66233be8bf0';
 const clientSecret = 'bce8dd6a0cc84cccaa31c1045bac6f85';
 
+
 const loadGenres = async () => {
     //get the token
 
@@ -36,8 +37,25 @@ const loadGenres = async () => {
      // get the list of tracks
      const tracks = await getTracks(token, tracksEndPoint);
 
-      tracks.forEach(el => console.log(el.track.name))
+    //   tracks.forEach(el => console.log(el.track.album.images[2].url))
      return tracks
 }
 
-export {loadGenres}
+const createSongElements = (el) => {
+    const song = document.createElement('ul')
+    const songCont = document.querySelector('.songCont')
+    const newTrack = document.createElement('li')
+    const newArtist = document.createElement('li')
+    const newAlbum = document.createElement('img')
+    song.className = 'song'
+    newTrack.textContent =el.track.name 
+    newArtist.textContent = el.track.artists[0].name
+    newAlbum.src = el.track.album.images[0].url
+    song.appendChild(newAlbum)
+    song.appendChild(newTrack)
+    song.appendChild(newArtist)
+
+    songCont.appendChild(song)
+}
+
+export {loadGenres,createSongElements}

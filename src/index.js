@@ -1,10 +1,22 @@
-
 import './styles/reset.css';
 import './styles/style.css';
-import {  loadGenres } from './modules/spotify.js'
+import logo from './images/logo1.png';
 
-import { findCity } from './modules/findCity.js'
-import { convertCelsius, convertFarenheit, convertMonth } from './modules/convert.js'
+import {
+    loadGenres,
+    createSongElements
+} from './modules/spotify.js'
+
+import {
+    findCity
+} from './modules/findCity.js'
+import {
+    convertCelsius,
+    convertFarenheit,
+    convertMonth
+    ,convertFtoC,
+    convertCtoF
+} from './modules/convert.js'
 
 const form = document.getElementById('form');
 const cityInput = document.getElementById('city-input');
@@ -13,42 +25,78 @@ const dayCont = document.getElementById('day');
 const monthCont = document.getElementById('month');
 const city = document.getElementById('city')
 const description = document.getElementById('description');
-const temp = document.getElementById('temperature');
 const submit = document.getElementById('submit');
+const temp = document.getElementById('temperature');
 const feels_like = document.getElementById('feels_like')
 const humidity = document.getElementById('humidity')
 const pressure = document.getElementById('pressure')
 const temp_max = document.getElementById('temp_max')
 const temp_min = document.getElementById('temp_min')
+const grades = document.querySelectorAll('.grades')
 const date = new Date()
 const day = date.getDate();
 const month = date.getMonth();
-const song = document.getElementById('song')
+const slider = document.querySelector('.slider');
+const checkbox = document.querySelector('input[type="checkbox"]');
+
+// const logoImg = new Image();
+// logoImg.src = logo;
+
+// const addIcon = () => {
+//     const link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+//     link.rel = 'shortcuts icon';
+//     console.log('ss')
+//     link.href = logo;
+//     document.getElementsByTagName('head')[0].appendChild(link);
+//   };
+
+// addIcon();
 
 
- submit.addEventListener('click' ,(e) => {
-    e.preventDefault();
+    checkbox.addEventListener('change', function () {
 
-    findCity(cityInput.value)
-    .then(response => {
-        city.textContent = response.name
-        temp.textContent = convertCelsius(response.main.temp);
-        country.textContent = response.sys.country;
-        feels_like.textContent = convertCelsius(response.main.feels_like);
-        pressure.textContent = convertCelsius(response.main.pressure);
-        humidity.textContent = convertCelsius(response.main.humidity);
-        temp_max.textContent = convertCelsius(response.main.temp_max);
-        temp_min.textContent = convertCelsius(response.main.temp_min);
-        dayCont.textContent = day;
-        monthCont.textContent = convertMonth(month);
-        description.textContent =response.weather[0].description
-    })
-   
-    loadGenres()
-    .then(data => {
-        song.textContent =data[1].track.name
+        console.log(checkbox.checked)
+        if (checkbox.checked) {
+            grades.forEach(el=>{el.textContent = 'ºF'})
+    
+            temp.textContent = convertCtoF(temp.textContent);
+            feels_like.textContent = convertCtoF(feels_like.textContent);
+            temp_max.textContent = convertCtoF(temp_max.textContent);
+            temp_min.textContent = convertCtoF(temp_min.textContent);
+        } else {
+            grades.forEach(el=>{el.textContent = 'ºC'})
+
+            temp.textContent = convertFtoC(temp.textContent);
+            feels_like.textContent = convertFtoC(feels_like.textContent);
+            temp_max.textContent = convertFtoC(temp_max.textContent);
+            temp_min.textContent = convertFtoC(temp_min.textContent);
+        }
     });
 
-    
-})
 
+submit.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (checkbox.checked) { checkbox.click()}
+
+    findCity(cityInput.value)
+        .then(response => {
+            city.textContent = response.name
+            country.textContent = response.sys.country;
+            pressure.textContent = response.main.pressure;
+            humidity.textContent = response.main.humidity;
+            temp.textContent = convertCelsius(response.main.temp);
+            feels_like.textContent = convertCelsius(response.main.feels_like);
+            temp_max.textContent = convertCelsius(response.main.temp_max);
+            temp_min.textContent = convertCelsius(response.main.temp_min);
+            dayCont.textContent = day;
+            monthCont.textContent = convertMonth(month);
+            description.textContent = response.weather[0].description
+        })
+
+    loadGenres()
+        .then(data => {
+            data.forEach(el => {
+                createSongElements(el)
+            })
+        });
+})

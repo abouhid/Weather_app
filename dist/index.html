@@ -42,7 +42,7 @@
       <div class="convert d-flex align-items-center">
         <span>ºC</span>
       <label class="switch mx-2">
-        <input type="checkbox">
+        <input type="checkbox" class="checkbox">
         <span class="slider round"></span>
       </label>
       <span>ºF</span>
@@ -50,22 +50,25 @@
     </div>
     </nav>
 
-    <main class="text-center mx-auto row d-flex pt-5" id="giphy">
-      <div class="boxx col-10 col-md-4 mx-auto pb-3">
-        <div class="mb-3" id="song">Song Suggestion</div>
+    <main class="text-center row d-flex p-5" id="giphy">
+      <div class="weather-box">
 
         <h2><span id="city">City</span>, <span id="country">Country</span></h2>
         <p><span id="day">Day</span>, <span id="month">Month</span></p>
-        <h2><span id="temperature">0</span><span id="grades">°C</span></h2>
-        <p>Feel like: <span id="feels_like">00</span></p>
-        <span>Temp-max: <span id="temp_max">00</span></span
-        ><span> | Temp-min: <span id="temp_min">00</span></span
-        ><br />
-        <span>Pressure: <span id="pressure">00</span></span
-        ><span> | Humidity: <span id="humidity">00</span></span
-        ><br />
-        <strong>Description: <br /><span id="description"></span> </strong
-        ><i id="icon"></i>
+        <h2><span id="temperature">0</span><span class="grades">°C</span></h2>
+        <p>Feel like: <span id="feels_like">00</span><span class="grades">°C</span></p>
+        <span>Temp-max: <span id="temp_max">00</span><span class="grades">°C</span></span>
+        <span> | Temp-min: <span id="temp_min">00</span><span class="grades">°C</span></span><br />
+        <span>Pressure: <span id="pressure">00</span></span>
+        <span> | Humidity: <span id="humidity">00</span></span>
+        <br />
+        <strong>Description: <br /><span id="description"></span> </strong>
+        <i id="icon"></i>
+      </div>
+      <div class="song-box">
+        <ul class='songCont'> Songs suggested for you to enjoy this weather:</ul> 
+
+
       </div>
     </main>
 

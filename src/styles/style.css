@@ -5,13 +5,6 @@ body {
     background-image: linear-gradient(to top, #232525 75%, (30,215,96) 25%); */
   }
 
-  main {
-    background-image: url('https://openw3.com/wp-content/uploads/2013/02/silverback-gorilla-leaves-africa.jpg');
-    background-position: center; /* Center the image */
-  background-repeat: repeat; /* Do not repeat the image */
-  background-size: cover;
-  min-height: -webkit-fill-available;
-  }
   
 nav {
   display: flex;
@@ -53,6 +46,48 @@ nav {
 #submit:hover {
   background-color: rgba(30,215,96,0.7);
   color: white;
+}
+
+
+
+main {
+  background-image: url('https://openw3.com/wp-content/uploads/2013/02/silverback-gorilla-leaves-africa.jpg');
+  background-position: center; /* Center the image */
+background-repeat: repeat; /* Do not repeat the image */
+background-size: cover;
+min-height: -webkit-fill-available;
+justify-content: space-between;
+}
+
+.weather-box, .song-box {
+  background-color: white;
+  border-radius: 5px;
+  padding: 5%;
+  opacity: 0.9;
+}
+
+.songCont {
+  display: flex;
+    flex-direction: column;
+}
+
+.songCont img {
+  width: 40px;
+}
+
+.song-box {
+
+}
+
+.song {
+  display: flex;
+  margin-top: 1em;
+}
+.song li {
+  margin-left: 0.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
 }
 
 /* Slider */
@@ -125,17 +160,7 @@ input:checked + .slider:before {
 
 /* end of slider */
 
-
-
-
-
-
-
-
-
-
-
-
+/* modal */
 .modalBox {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
