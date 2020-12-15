@@ -16,7 +16,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://rawcdn.githack.com/abouhid/Weather_app/a09e9398e3803c4434b3ef09017d075b2658885a/dist/index.html)
+[Live Demo Link](https://rawcdn.githack.com/abouhid/Weather_app/97815a06886320d8d84b807bf5505b24217399e3/dist/index.html)
 
 ## Getting Started
 
