@@ -16,7 +16,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://rawcdn.githack.com/abouhid/Weather_app/97815a06886320d8d84b807bf5505b24217399e3/dist/index.html)
+[Live Demo Link](https://sweatherapp.netlify.app/)
 
 ## Getting Started
 
