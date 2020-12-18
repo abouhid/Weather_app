@@ -1,9 +1,6 @@
-body {
-  /* max-width: 1200px; */
+html,body {
   margin: 0 auto;
-
-  /* background-color: #353531;
-    background-image: linear-gradient(to top, #232525 75%, (30,215,96) 25%); */
+  height: 100%;
 }
 
 nav {
@@ -12,7 +9,7 @@ nav {
   background-color: #232525;
   width: 100%;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
   padding: 0 3%;
 }
@@ -28,7 +25,7 @@ nav {
 }
 
 .logo {
-  width: 100px;
+  width: 20vh;
 }
 
 .logoCont span {
@@ -40,8 +37,6 @@ nav {
 
 #city-input {
   margin-right: 1em;
-  min-width: 100px;
-  width: 100vh;
 }
 
 #submit {
@@ -59,8 +54,7 @@ main {
   background-position: center; /* Center the image */
   background-repeat: repeat; /* Do not repeat the image */
   background-size: cover;
-  min-height: -webkit-fill-available;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
   padding: 5% 3%;
 }
@@ -161,7 +155,7 @@ main {
   cursor: pointer;
   display: grid;
   margin-top: 1em;
-  grid-template-columns: 0.1fr 0.7fr 0.5fr;
+  grid-template-columns: 0.1fr 1fr 1fr;
 }
 
 .song li {

@@ -1,6 +1,8 @@
 import './styles/reset.css';
 import './styles/style.css';
 import changeQuote from './modules/quotes';
+import logo from './images/logo1.png';
+
 
 import {
   loadSongs,
@@ -44,6 +46,20 @@ const songBox = document.querySelector('.song-box');
 const welcomeBox = document.querySelector('.welcome-box');
 const quote = document.querySelector('.quote');
 quote.textContent = changeQuote();
+const logoCont = document.querySelector('.logoCont');
+
+const myLogo = new Image();
+myLogo.src = logo;
+myLogo.style.cssText = "width: 15vh"
+
+logoCont.prepend(myLogo);
+
+const link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+link.rel = 'shortcut icon';
+link.href = logo;
+document.getElementsByTagName('head')[0].appendChild(link);
+
+
 
 checkbox.addEventListener('change', () => {
   if (checkbox.checked) {
@@ -71,7 +87,9 @@ checkbox.addEventListener('change', () => {
 submit.addEventListener('click', (e) => {
   e.preventDefault();
 
-  if (checkbox.checked) { checkbox.click(); }
+  if (checkbox.checked) {
+    checkbox.click();
+  }
   spinner.classList.add('spin');
   findCity(cityInput.value)
     .then(response => {
